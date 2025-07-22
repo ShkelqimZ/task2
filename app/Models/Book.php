@@ -6,6 +6,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Builder;
+use App\Http\Filters\QueryFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -25,5 +27,16 @@ class Book extends Model
     public function loans(): HasMany
     {
         return $this->hasMany(Loan::class);
+    }
+
+    /**
+     * Scope a query to apply filters.
+     * @param Builder $builder
+     * @param QueryFilter $filters
+     * @return Builder
+     */
+    public function scopeFilter(Builder $builder, QueryFilter $filters)
+    {   
+        return $filters->apply($builder);
     }
 }
