@@ -20,7 +20,7 @@ class LoanControllerTest extends TestCase
         $payload = [
             'book_id' => $book->id,
             'member_id' => Member::factory()->create()->id,
-            'due_at' => now()->addWeek(),
+            'due_at' => now()->addWeek()->format('Y-m-d H:i:s'),
         ];
 
         $response = $this->postJson('/api/loans', $payload);
