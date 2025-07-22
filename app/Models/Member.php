@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * Member Model Class
+ * @package App\Models
+ */
 class Member extends Model
 {
     use HasFactory;
@@ -16,6 +20,7 @@ class Member extends Model
 
     /**
      * A member can have many loans.
+     * @return HasMany
      */
     public function loans(): HasMany
     {

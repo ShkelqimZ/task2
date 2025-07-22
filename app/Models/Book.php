@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * Book Model Class
+ * @package App\Models
+ */
 class Book extends Model
 {
     use HasFactory;
@@ -16,6 +20,7 @@ class Book extends Model
 
     /**
      * A book can have many loans.
+     * @return HasMany
      */
     public function loans(): HasMany
     {

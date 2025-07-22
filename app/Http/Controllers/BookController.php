@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use App\Http\Resources\BookResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * BookController
+ * @package App\Http\Controllers
+ */
 class BookController extends Controller
 {
     /**

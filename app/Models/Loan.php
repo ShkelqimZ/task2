@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * Loan Model Class
+ * @package App\Models
+ */
 class Loan extends Model
 {
     use HasFactory;
@@ -16,6 +20,7 @@ class Loan extends Model
 
     /**
      * A loan belongs to a book.
+     * @return BelongsTo
      */
     public function book(): BelongsTo
     {
@@ -24,6 +29,7 @@ class Loan extends Model
 
     /**
      * A loan belongs to a member.
+     * @return BelongsTo
      */
     public function member(): BelongsTo
     {
